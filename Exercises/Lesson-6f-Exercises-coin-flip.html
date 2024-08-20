@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Flip Game</title>
+</head>
+<body>
+    
+    <p>
+        <h3>6f-Question-1</h3>
+        Generate a random number with Math.random(). Save it in a variable.
+
+        <h3>6g-Question-2</h3>
+        Generate an if-statement and check:
+        <ul>
+            <li>
+                If the number is less than 0.5, then display 'heads' in the console.
+            </li>
+            <li>Else display 'tails' in the console</li>
+        </ul>
+
+        <h3>6h-Question-3</h3>
+        Instead of displaying 'heads' or 'tails' in the console, save the result in a
+        variable called 'result'.
+
+        <h3>6i-Question-4</h3>
+        Let's say we're trying to guess the result. Create a variable called 'guess' and
+        save your guess ('heads' or 'tails').
+        <ul>
+            <li>If your guess matches the result, display 'You Win!' in the console</li>
+            <li>If your guess does not match the result, display 'You Loss'</li>
+        </ul>
+
+        <h3>6j-(Challenge) Instead of using if-statement in the previous exercises,
+            try switching them into ternary operators (condition ? A:B)
+        </h3>
+    </p>
+</body>
+
+    <script>
+        //Answer using ternary operator CHeck the logic again
+        const randomNumber = Math.random();
+        randomNumber <= 0.5 ? result='heads' : result='tails';
+        
+        const guess = 'tails'
+        guess === result ? console.log(`YouWin! ${randomNumber}`) : console.log('YouLoss!');
+
+        /* Answer 6f-6i
+        const randomNumber = Math.random();
+
+        if (randomNumber <= 0.5 ){
+            result = 'heads';
+        } else{
+            result = 'tails';
+        }
+
+        const guess = 'tails';
+        if (guess === result){
+            console.log('You win!');
+        } else{console.log('You loss!');}
+        */
+    </script>
+</html>
