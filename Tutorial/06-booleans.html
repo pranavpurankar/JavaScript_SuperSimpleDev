@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleans</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        const age = 15;
+
+        if(age >= 16){
+            console.log('You can drive');
+        }
+        else if(age >= 14){
+            console.log('Almost there');
+        }
+        else{
+            console.log("You can't drive");
+        }
+        */
+
+        /*
+
+       // Logical Operator
+
+       //1. AND Operator (&&)
+       console.log(true && true)
+       console.log(0.2 >= 0 && 0.2 < 1/3)
+
+       //2.OR Operator (||)
+       console.log('OR: True OR True',true || true)
+       console.log('OR: False OR True',false || true)
+       console.log('OR: False OR False',false || false)
+
+       //3.NOT operator (!)
+       console.log(!true)
+       console.log('NOT Operator',!false)
+       */
+      /*
+      if(0){
+        console.log('truthy');
+      }
+
+      const cartQuantity = 5;
+      if (cartQuantity){
+        console.log('cart has product')
+      }
+      
+      console.log(!0);
+
+      console.log('text' / 5);
+      //we can only use this with let
+      let variable1;
+
+      //for const we have to define the undefined like below
+      const variableConst = undefined;
+      console.log('variable cost',variableConst);
+
+      console.log(variable1);
+
+      */
+     /* Ternary operator
+     let result;
+     if (condition) {
+        result = 'truthy';
+     } else{
+      result = 'falsy';
+    }
+     
+     */
+
+     const result = 0 ? 'truthy': 'falsy'
+    
+     console.log(result)
+
+     /*
+     The guard operator &&
+     This is specific to javascript AND operator. If the first
+     value is false it means we know that it going to false by
+     any means. So early evaluation will be time saving.
+
+     Ex: false && console.log('Hi') (no need to check further 
+     execution) => op is 'falsy'
+
+     This is know as short-circuit or called an guard operator
+
+     This is a shortcut for if statement like this
+     if (condition) {
+        console.log('hello')
+     }
+     */
+
+     const message = 5 && 'hello';
+     console.log(message);
+
+     /*
+     OR operator ||
+     If the first value is truthy OR will also stops early like AND
+     it dosen't evaluate the next value. This is an example of
+     short-circuit.
+     */
+
+     const currency = undefined || 'USD';
+     console.log(currency);
+
+
+    
+    </script>
+</body>
+</html>
