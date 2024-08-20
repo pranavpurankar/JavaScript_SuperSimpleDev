@@ -8,6 +8,7 @@
 <body>
 
     <p>
+        <h3>Question 1</h3>
         Create a variable called 'hour' and save the current hour of
         the day (use 24-hour format and save it as a number between
         0 and 23).
@@ -17,10 +18,34 @@
             <li>Otherwise, display 'Good night!' in the console</li>
         </ul>
 
+        <h3>Question 2</h3>
+        Continuing from 6a, try changing the value in the 'hour' variable to make
+        it display different messages.
+        <ul>
+            <li>This is an easy question</li>
+        </ul>
+
+        <h3>Question 3</h3>
+        Continuing from 6a, create a variable called 'name' and save your
+        name inside (as a string). Update the if-statement to display your
+        name in each message. For example: 'Good morning ${name}!'
+
     </p>
     
 
     <script>
+        let hour = 1;
+        const name = 'Pranav';
+        if (hour >= 6 && hour<=12){
+            console.log(`Good morning ${name}`);
+        }else if (hour >= 13 && hour <= 17){
+            console.log(`Good afternoon ${name}`);
+        }else if(hour >= 17){
+            console.log(`Good night ${name}`);
+        }
+
+
+        /* Question 1 => answer
         let hour = 18;
 
         if(hour > 0 && hour < 12 ){
@@ -30,6 +55,8 @@
         }else if(hour >= 18 && hour <=23){
             console.log('Good night');
         }
+        */
+
     </script>
 </body>
 </html>
