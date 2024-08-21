@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises Functions</title>
+</head>
+<body>
+    
+    <p>
+        <h3>7d-Question-4</h3>
+        Create a function 'convertToFahrenheit(celcius)' that take a number in 
+        degrees Celcius and returns a number in degrees Fahrenheit
+        • Formula: Fahrenheit = (Celcius * 9/5) + 32
+        • convertToFahrenheit(25) => 77
+    
+        <h3>7e-Question-</h3>
+        Create a function 'convertToCelcius(fahrenheit)' that takes a number in
+        degrees Fahrenheit and returns a number in degrees Celcius.
+        • Formula: Celcius = ((Fahrenheit-32) * 5/9)
+        • convertToCelcius(86) => 30
+
+        <h3>7c-Question-</h3>
+        Create a function 'convertTemperature(degrees, unit)' that takes a number
+        and a unit('C' or 'F'), and converts it into the other unit.
+        • convertTemperature(25,'C') => '77F'
+        • convertTemperature(86,'F') => '30C'
+    </p>
+</body>
+
+    <script>
+        /*
+        // Answer 7d
+        function convertToFahrenheit(celcius){
+            fahrenheit = ((celcius * 9/5) + 32);
+            console.log(fahrenheit);
+        }
+        convertToFahrenheit(25);
+
+        //Answer 7e
+        function convertToCelcius(fahrenheit){
+            celcius = ((fahrenheit - 32) * 5/9);
+            console.log(celcius);
+        }
+        convertToCelcius(86);
+        */
+
+        //Answer 7f
+
+        function convertToFahrenheit(celcius){
+            return ((celcius * 9/5) + 32);
+        }
+
+        function convertToCelcius(fahrenheit){
+            return ((fahrenheit - 32) * 5/9);
+        }
+
+        function convertTemperature(degrees,unit){
+            if (unit === 'C'){
+                const result = convertToFahrenheit(degrees);
+                return `${result}F`;
+            }
+            else if (unit === 'F'){
+                const result = convertToCelcius(degrees);
+                return `${result}C`;
+            }
+        }
+        console.log(convertTemperature(25,'C'));
+        console.log(convertTemperature(86, 'F'));
+        </script>
+</html>
