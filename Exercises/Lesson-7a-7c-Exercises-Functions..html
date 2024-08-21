@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises Functions</title>
+</head>
+<body>
+   
+    <p>
+        <h3>7a-Question-1</h3>
+        Create a function called 'greet' that display the message 'Hello!' in 
+        the console. Call/run this function a few times using: greet();
+
+        <h3>7b-Question-2</h3>
+        Continuing from 7a, add a parameter called 'name' to the 'greet'
+        function and display the message: 'Hello ${name}!'. Call the function
+        a few times with different names: greet('Simon')
+
+        <h3>7c-Question-3</h3>
+        Try calling greet() wihtout a name (it will display 'Hello undefined').
+        Modify the function so that if 'name' is undefined, it will display
+        'Hi there!' instead.
+        (Hint: use an if-statement. Since undefined is a falsy value, you can use:
+        if(!name){....} to check if 'name' is undefined)
+    </p>
+    
+</body>
+
+    <script>
+
+        // Question-3 answer
+        function greet(name){
+            if (!name){
+                console.log('Hello there!')
+            }else{
+                console.log(`Hello ${name}`);
+            }
+        }
+        greet('pranav');
+        greet();
+
+
+        /*
+        // Question-2 answer
+        function greet(name){
+            console.log(`Hello ${name}`);
+        }
+        greet('Pranav');
+        greet('Shreyash');
+        */
+
+        /*
+        // Question-1 answer
+        function greet(){
+            console.log('Hello!');
+        }
+        greet();
+        */
+
+    </script>
+</html>
