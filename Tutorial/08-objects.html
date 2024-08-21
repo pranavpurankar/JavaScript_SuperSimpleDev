@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    
+    <p>
+        <h3>What is an object</h3>
+        An objects groups multiple values together.
+        Syntax:
+                object{
+                    property_1: value_1,
+                    property_2: value_2
+                }
+
+        <h3> Why we use objects? </h3>
+        Instead of creating bunch of variable like name, price, and
+        other things. This will make our code lot cleaner.
+    </p>
+
+</body>
+
+    <script>
+        const product = {
+            name:'socks',
+            price:1090
+        };
+        console.log(product);
+        console.log(product.name);
+        console.log(product.price);
+
+        product.name = 'cotton socks';
+        console.log(product);
+
+        product.new_property = false;
+        console.log(product);
+
+        delete product.new_property;
+        console.log(product);
+
+    </script>
+
+</html>
