@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DOM Projects </title>
+</head>
+<body>
+    
+    <!--
+    innerText property is used when we want to match the text exactly irrespective
+    of the spaces or new line characters.
+
+    Algorithm:
+
+    When we click the button:
+        1. If the button is "Subscribe" changed it => "Subscribed"
+        2. Otherwise, change it back to => 'Subscribe'
+    -->
+
+    <p> YouTube Subscribe Button</p>
+
+    <!--The below code is not readable. Basically we are mixing the html code with
+    js. The JavaScript code now we will write in the script using function
+    
+    <button onclick="
+        const buttonElement = document.querySelector('.js-subscribe-button');
+        
+        if(buttonElement.innerText === 'Subscribe'){
+            buttonElement.innerHTML = 'Subscribed';
+        } else{
+            buttonElement.innerHTML = 'Subscribe';
+        }
+    " class="js-subscribe-button">Subscribe</button>
+    -->
+
+    <button onclick="subscribe();" class="js-subscribe-button">Subscribe</button>
+
+    <script>
+
+        // Subscribe button function
+
+        function subscribe(){
+            const buttonElement = document.querySelector('.js-subscribe-button');
+
+            if (buttonElement.innerText === 'Subscribe'){
+                buttonElement.innerHTML = 'Subscribed';
+            } else {
+                buttonElement.innerHTML = 'Subscribe';
+            }
+        }
+    </script>
+</body>
+</html>
