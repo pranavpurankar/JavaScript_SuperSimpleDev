@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <p>
+        <ul><li>Document Object Model</li></ul>
+        <p>
+            The DOM is another built-in object. The document object model represents
+            the webpage or models the webpage.
+            <br>
+            If we look like document objects properties, it allow us to manipulate the
+            html. It means DOM combies JavaScript and HTML together, and it gives JS
+            control of the webpage.
+        </p>
+        <ul><li>Query Selector</li></ul>
+        <p>
+            This query selector allows us to select the HTML elements.
+            When HTML inside the JavaScript, they are just a JavaScript objects.
+            <br>
+            We can use class selector like in the CSS, to the JavaScript. Example is
+            js-button
+        </p>
+    </p>
+    <button>hello</button>
+    <button class="js-button">Second button</button>
+    
+    <script>
+        //Document query selector
+        console.log(document.querySelector('button').innerHTML);
+        document.querySelector('button')
+            .innerHTML = 'Changed';
+        
+        // Above code will only selects 1st button. We've added the class attribute
+        // in the new button element, so that we can access it using attribute selector
+        const buttonElement = document.querySelector('.js-button');
+        console.log(buttonElement);
+
+        /*
+        console.log(document.title);
+        document.title = 'Changed';
+        console.log(typeof document.body);
+
+        console.log(document.body.innerHTML);
+
+        document.body.innerHTML = "<button>God</button>";
+
+        console.log(document.body);
+        */
+
+        /*
+        document.body.innerHTML = 'hello';
+        document.title = 'Good Job!';
+        */
+    </script>
+</body>
+</html>
