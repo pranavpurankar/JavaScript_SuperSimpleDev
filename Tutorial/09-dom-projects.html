@@ -7,6 +7,25 @@
 </head>
 <body>
     
+    <p>
+        <ul>
+            <li>clicks, keydowns => known as "events"</li>
+            <li>onclick, onkeydown => known as "event listeners"</li>
+        </ul>
+
+        <ul>
+            <li>
+                Window object: The document object represents the webpage
+                where as window is reoresents the browser browser
+            </li>
+            
+            <li>
+                Why we don't use window.document then? The reason is we use
+                the shortcut, JavaScript will automatically add it, we don't
+                have to type it.
+            </li>
+        </ul>
+    </p>
     <!--
     innerText property is used when we want to match the text exactly irrespective
     of the spaces or new line characters.
@@ -36,7 +55,71 @@
 
     <button onclick="subscribe();" class="js-subscribe-button">Subscribe</button>
 
+    <!-- Amazon Shipping calculator-->
+    <p>Amazon Shipping Calculator</p>
+    
+    <input placeholder="Cost of order" class="js-cost-input"
+        onkeydown="handleCostKeydown(event);">
+    
+    <button onclick="
+        calculateTotal();
+    ">Calculate</button>
+    
+    <p class="js-total-cost"></p>
+
+    <!--
+    When we press ENTER it should behave same as when we click calculate button.
+    
+    Algorithm: (When we press key)
+    1. Check if the key is "Enter"
+    2. If it is, do the same thing as the calculate button
+    -->
+
+
     <script>
+        // Window object
+        window.document
+        window.console.log('Window')
+        windo.alert('Hi I am from window');
+
+        //Converting to string
+        String('12')
+        
+        console.log('25' - 5);
+        /*
+        Why the above operation resulted in the number operation. This is 
+        known as type coercion, or automatic type conversion. 
+        
+        Coercion => Coercion is the act or process of persuading someone 
+        forcefully to do something that they do not want to do.
+        */
+
+        // Rule of thumb is whenever we want to perform mathematical operation
+        // Good practise is to use numbers only. Below will concatenate instead
+        // of addition
+
+        console.log('25' + 5);
+
+        // Pressing Enter function
+
+        function handleCostKeydown(event){
+            if (event.key === 'Enter'){
+            calculateTotal();
+        }
+        }
+
+        // Amazon shipping calculator
+        function calculateTotal(){
+            const inputElement = document.querySelector('.js-cost-input');
+            let cost = Number(inputElement.value);
+
+            if (cost < 40 ){
+                cost = cost + 10;
+            }
+
+            document.querySelector('.js-total-cost')
+                .innerHTML = `$${cost}`;
+        }
 
         // Subscribe button function
 
