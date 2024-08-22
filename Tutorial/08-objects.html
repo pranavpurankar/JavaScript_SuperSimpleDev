@@ -19,11 +19,118 @@
         <h3> Why we use objects? </h3>
         Instead of creating bunch of variable like name, price, and
         other things. This will make our code lot cleaner.
+
+        <h3>Dot notation vs Bracket</h3>
+        • We can access the property by using both, but the main difference is
+        bracket notation lets us use properties that don't work with dot notation.
+        Let's take a below example to understand this
+        <br><br>
+
+        const property2 = {<br>
+            name: 'shirt'<br>
+        } <br>
+        product2.name //Will work <br>
+        product2.delivery-time // JS will treat this as substraction instead of 
+                                single variable. In that case use below. <br> 
+        product2['delivery-time'] //well thi is not a property but that is okay
+                                    concet is simple. <br>
+        
+        <br><br>
+        • Which one should we use? <br>
+        - use dot notation by default <br>
+        - for properties that don't work, use bracket notation <br>
+
+        • Bracket notation can contain anything that results in a value
+        other than strings like <br>
+        property['variable'] <br>
+        property['delivery' + 'time'] <br>
+
+        if there is only string inside the brackets; if we removed the [] brackets
+        the code will still works
+        <br><br>
+        • A function is another type of value, we will learn more about this later.
+        For now just knows that function is another values.
+        <br> Function inside object = Method Ex: console.log If we check the typeof
+        console => object and typeof console.log => function. So this is a function
+        inside object "console"
+        <br> Another example is Math.random() => Math is object and random is func
+        which is saved inside an Math object. We call Math.random() => Method
+
+        <h3>Built in Objects</h3>
+        JavaScript has built-in object like we've seen console. There are other objects
+        also. Two more built-in objects JSON and localstorage, we'll use those objects
+        to improve our rock, paper, scissors project.
+
+        <ul>
+            <li>JSON</li>
+            <p>Helps is in JavaScript Object Notation. It is basically a syntax similiar
+                to JavaScript objects but has less feature. All properties and string must
+                use JSON, does not support single quote and functions.
+                <br>
+                • Why would we use JSON syntax?
+                JavaScript object syntax only makes sense in javascript. So to talk to or
+                to share information other programming languag, we use JSON.
+                <br>
+                JSON.stringify => returns a string. This JSON string ready to be sent to 
+                another computer or ready to be save in storage.
+            </p>
+            <li>Local Storage</li>
+            <p>
+                Local storage used to save values more permanently. However variables are
+                temporary.
+                <br>
+                localStorage => is object
+                setItem => is method
+                <br>
+                • null vs undefined
+                <br>
+                null=> intentionally want something to be empty.
+                <br>
+                undefined =>a variable has been declared but has not yet been assigned a 
+                value
+
+            </p>
+
+            <li>Auto=Boxing</li>
+            <p>
+                JavaScript automatically wraps a string in a special object.
+                <br>
+                Ex: console.log('hello'.length) => returns lenght of string
+                <br> console.log('hello'.toUpperCase()); => return uppercase hello
+                <br>
+                So 'hello' is wrapped in the special object; javascript does this
+                automatically this is know as auto-boxing.
+                <br>
+                Auto-Boxing is works with numbers and booleans but does not work with 
+                null and undefined.
+            </p>
+
+            <li> Object are Reference</li>
+            If create an object like <br>
+            Ex: const object1 = { <br>
+                message:'hello'<br>
+            } <br>
+            <br>The actual value is stored in the memory, and object is reference to this
+            memory location. This is like a shortcut on our computer system, it points to
+            the actual memory location where it is stored. I already know about this.
+
+            <br> One thing to note here is the eventhough we used const, we're able to
+            manipulate the value of object. This is because eventhough const is preventing
+            us from changing the reference the variable, but it doesn't prevent us from
+            reaching into the reference and changing the object that is pointing to.
+
+            <li>Destructuring</li>
+            <p>
+
+                It is an easier way to take properties out of an object.
+            </p>
+        </ul>
     </p>
 
 </body>
 
     <script>
+        /*
         const product = {
             name:'socks',
             price:1090
@@ -40,7 +147,110 @@
 
         delete product.new_property;
         console.log(product);
+        */
 
+        const product2 = {
+            name: 'shirt',
+            ['delivery-time']: '1 day',
+            'delivery-time1': '3day',
+            rating: {
+                stars: 4.5,
+                count: 87,
+            },
+            fun: function function1(){
+                console.log('function inside object');
+            }
+        };
+
+        /*
+        //Objects in JSON
+        console.log(product2);
+        console.log(product2.name);
+        console.log(product2['name']);
+        console.log(product2.rating.count);
+        console.log(product2.fun());
+        console.log(typeof console.log);
+        */
+
+        /*
+        // Built in Objects
+        // Object -> JSON | stringify -> Method inside JSON obj
+        
+        const jsonString = JSON.stringify(product2);
+
+        // Conversion JSON back to javascript object
+        console.log(JSON.parse(jsonString));
+
+        // LocalStorage
+        // set item
+        localStorage.setItem('message', 'hello');
+
+        //get item
+        console.log(localStorage.getItem('message'));
+        */
+
+        //Auto-Boxing
+        console.log('hello'.length);
+        console.log('hello'.toUpperCase());
+
+        //Object are references
+
+        const object1 = {
+            message:'hello',
+        };
+
+        const object2 = object1;
+
+        object1.message = 'Good Job';
+        console.log(object1);
+        console.log(object2);
+
+        // we can't compare the objects directly
+        // This code compares the references not the value inside the object
+        
+        const object3 = {
+            message:'Good job!'
+        }
+
+        console.log(object3 === object1);
+
+        // This will result in the true because this two variables as same ref
+        console.log(object2 === object1);
+
+        const object4 = {
+            message:'Good job!',
+            price:799
+        };
+
+
+        // const message = object4.message;
+
+        // Destructuring => pull message property out of object4 & save it in a
+        // message variable. Below code does the same as above
+
+        const { message, price } = object4;
+        console.log(message);
+        console.log(price);
+
+        // Shorthand property
+        const object5 = {
+            // message: message,
+            message
+        };
+        console.log(object5);
+
+        // Shorthand method
+        const object6 = {
+            message,
+            // method: function function1(){
+            //     console.log('method');
+            // }
+            // Below code does the same thing as above
+            method(){
+                console.log('method')
+            }
+        }
+        object6.method();
     </script>
 
 </html>
