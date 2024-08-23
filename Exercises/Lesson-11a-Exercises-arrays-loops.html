@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Arrays and Loops</title>
+</head>
+<body>
+    
+    <p>
+        11a. Create an array of numbers: const nums=[10,20,30]; Modify the
+        last value in this array and change it to 99.
+    </p>
+    
+    <br>
+    
+    <p>
+        11b. Create a function getLastValue(array) that takes an array and
+        returns the last value in the array. Hint: array indexes start at
+        0 so the last index is the number of values in the array minus1
+        <br>
+        • getLastValue([1,20,22,24,5]) => 5
+        • getLastValue(['hi','hello','good']) => 'good'
+    </p>
+
+    <br><br>
+
+    <p>
+        11c. Create a function arraySwap(array) that takes an array and 
+        returns an array where the first and last values are swapped.
+        <br>
+        • arraySwap([1,20,22,24,5]) => [5,20,22,24,1]
+        • arraySwap(['hi','hello','good']) => ['good','hello','hi']
+    </p>
+
+    <script>
+        // 11a Answer 
+        nums = [10,20,30];
+        nums[nums.length-1] = 90;
+        console.log(nums);
+
+        // 11b Answer
+        function getLastValue(arr){
+            return (arr[arr.length-1]);
+        }
+        console.log(getLastValue([1,20,22,24,5]));
+        console.log(getLastValue(['hi','hello','good']));
+
+        // 11c Answer
+        /*
+        Algorithm (Brute Force):
+        1. Fetch First and Last value
+        2. Insert last value and index 0
+        3. Insert first value at arr.length-1 that is last
+        */
+        function arraySwap(arr){
+            console.log(`Original Array: ${arr}`)
+            const firstValue = arr[0];
+            const lastValue = arr[arr.length-1];
+            arr[0] = lastValue;
+            arr[arr.length-1] = firstValue;
+            console.log(`Swapped Array: ${arr}`);
+        }
+        arraySwap([1,20,22,24,5]);
+        arraySwap(['hi','hello','good'])
+    </script>
+</body>
+</html>
