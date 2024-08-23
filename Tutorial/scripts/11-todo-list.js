@@ -22,7 +22,23 @@ function addTodo(){
 }
 
 // Todo list v2;, displays the list of element on the display
-const todoList1 = [];
+const todoList1 = ['make dinner', 'wash dishes'];
+
+// Generating HTML
+function renderTodoList(){
+
+    let todoListHTML = '';
+
+    for (let i = 0; i < todoList1.length; i++) {
+        const todo = todoList1[i];
+        const html = `<p> ${todo} </p>`;
+        todoListHTML += html;
+    }
+    console.log(todoListHTML);
+    document.querySelector('.js-todo-list').innerHTML = todoListHTML;
+}
+
+renderTodoList();
 
 function addTodo1(){
     const inputElement = document.querySelector('.js-name-input1');
@@ -32,4 +48,6 @@ function addTodo1(){
     console.log(todoList1);
     // Reset placeholder to initial stage
     inputElement.value = '';
+    //disply todo list
+    renderTodoList();
 }
