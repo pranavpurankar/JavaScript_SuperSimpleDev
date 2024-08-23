@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DOM Projects </title>
+    <style>
+        .subscribe-button {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <!--
+    innerText property is used when we want to match the text exactly irrespective
+    of the spaces or new line characters.
+
+    Algorithm:
+
+    When we click the button:
+        1. If the button is "Subscribe" changed it => "Subscribed"
+        2. Otherwise, change it back to => 'Subscribe'
+    -->
+
+    <p> YouTube Subscribe Button</p>
+
+    <button onclick="subscribe();
+    "class="js-subscribe-button subscribe-button">Subscribe
+    </button>
+
+    <!-- Amazon Shipping calculator-->
+    <p>Amazon Shipping Calculator</p>
+    
+    <input placeholder="Cost of order" class="js-cost-input"
+        onkeydown="handleCostKeydown(event);">
+    
+    <button onclick="
+        calculateTotal();
+    ">Calculate</button>
+    
+    <p class="js-total-cost"></p>
+
+    <!--
+    When we press ENTER it should behave same as when we click calculate button.
+    
+    Algorithm: (When we press key)
+    1. Check if the key is "Enter"
+    2. If it is, do the same thing as the calculate button
+    -->
+
+
+    <script>
+
+        // This video is about styling the elements and other things
+        // Currently I am focused on javascript. I am moving to next chapter
+        // Later I will comeback to this.
+
+        function handleCostKeydown(event){
+            if (event.key === 'Enter'){
+            calculateTotal();
+        }
+        }
+
+        // Amazon shipping calculator
+        function calculateTotal(){
+            const inputElement = document.querySelector('.js-cost-input');
+            let cost = Number(inputElement.value);
+
+            if (cost < 40 ){
+                cost = cost + 10;
+            }
+
+            document.querySelector('.js-total-cost')
+                .innerHTML = `$${cost}`;
+        }
+
+        // Subscribe button function
+
+        function subscribe(){
+            const buttonElement = document.querySelector('.js-subscribe-button');
+
+            if (buttonElement.innerText === 'Subscribe'){
+                buttonElement.innerHTML = 'Subscribed';
+            } else {
+                buttonElement.innerHTML = 'Subscribe';
+            }
+        }
+    </script>
+</body>
+</html>

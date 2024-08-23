@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and Loops</title>
+</head>
+<body>
+    <p>
+        <ul>
+            <li>Arrays</li>
+            <p>
+                An arrays is another type of value, and it represents a
+                list of values.
+            </p>
+
+            <li> Arrays is also an object but they are special types of
+                objects.
+            </li>
+            <p>
+                Methods: push():- Will add an element at the end <br>
+                Methods: splice():- will two arguments (arg1,arg2).
+                <br>splice(Index we want to remove, Number of values to remove)
+            </p>
+            
+        </ul>
+    </p>
+    
+    <script>
+        const myArray = [10,20,30];
+        console.log(myArray);
+
+        myArray[0] = 36;
+        console.log(myArray);
+
+        console.log(typeof [1,2]);
+        console.log(Array.isArray([1,2]));
+        console.log(myArray.length);
+        myArray.push(96);
+        console.log(myArray);
+        myArray.splice(0, 1);
+        console.log(myArray);
+        [1,'hello',true, { name: 'socks'}, [2,3]]
+    </script>
+</body>
+</html>
