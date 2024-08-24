@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
+    <link rel="stylesheet" href="styles/11-todo-list.css">
 </head>
 <body>
     
@@ -16,14 +17,27 @@
     <button onclick="addTodo1()">Add</button>
 
     <!--Second version of Todo list -->
-    <p>Todo List Practise - v2</p>
+    <!-- <p>Todo List Practise - v2</p>
 
     <input placeholder="Todo name"
         class="js-name-input1">
     
         <button onclick="addTodo1()">Add</button>
 
-        <div class="js-todo-list"></div>
+        <div class="js-todo-list"></div> -->
+
+    <!-- Third-->
+    <p>Todo List Practise - v3</p>
+
+    <div class="todo-input-grid">
+        <input placeholder="Todo name"
+            class="js-name-input1 name-input">
+
+        <input type="date" class="js-due-date-input due-date-input">
+
+        <button onclick="addTodo1();" class="add-todo-button">Add</button>
+    </div>
+        <div class="js-todo-list todo-grid"></div>
 
     <script src="scripts/11-todo-list.js"></script>
 </body>
