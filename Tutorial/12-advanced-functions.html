@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Functions</title>
+</head>
+<body>
+    
+    <p>
+        <ul>
+            <li>Anonymous function</li>
+            A function without name is known as anonymous function <br>
+            Ex: const function = function (){};
+            <br>Basically the function we used to write in the javascript
+            like function greeting() {} is a long cut of the 
+            var greeting  = function (){}. Using var is not advisiable.
+            <br><br>
+
+            <li>Hoisting</li>
+            <br>Our standard javascript function syntax that is
+            <br> greeting();
+            <br> function greeting(){
+            <br>    console.log(greeting)
+            <br> }
+
+            Hoisting means you can call the function before it's declaration
+            since it dosen't matter what the order is. Function is declared
+            before or after, condition is it should somewhere exists in the 
+            code. That is the advantage of the this syntax.
+
+            <li>Method</li>
+            Function saved inside an object, is known as method.
+
+            <li>Callback and Passing function into another function </li>
+            The function that we are passing in is called a callback function or
+            a callback. In our case run functions inupt is anonymous function 
+            which is a callback. <br>
+            Ex:
+                <br>function run(param){
+                <br>    pram(); -> param is variable bt taking input as func
+                <br> }
+                <br>run (function () { -> taking another func {aka callback func}
+                <br>    console.log("Hello callback func")
+                <br> })
+
+            <li> JavaScript feature setTimeout()</li>
+            This allows us to run a function in the future.
+            <br>syntax of this built-in function
+            <br> setTimeout(param1, param2)
+            <br> param1 -> function that we want to run in the future
+            <br> param2 -> how long to wait before running this function
+            
+            <li> Asynchronous and Synchronous</li>
+            • Asynchronous <br>
+            To understand this let's take our example of setTimeout(1000mlsc->1sec)
+            <br> setTimeout(function(console.log('timeout'),2000))
+            <br> console.log('next line')
+            <br>output:-
+            <br> next line
+            <br> timeout (after 2 sec)
+
+            <br> Why first 'next line' is printed ?
+            <br> This is because js will see that setTimeout need to be executed 
+            after 2 sec. So instead of waiting for 2sec it will prints first 
+            "next line" and after 2 sec -> "timeout"
+            <br>The setTimeout block of code is know as Asynchronous code. This 
+            means that computer won't wait to finish this line before going to 
+            next line. So setTimeout sets up the timeout and immediately goes to 
+            the next line.
+            <br> It is similiar to real-life if we setup a timer using clock; we 
+            won't for timer until it finishes. We perform other tasks and timer will
+            run in background.
+            
+            <li> Synchronous</li>
+            The Synchronous code will for one line to finish before going to the
+            next line to finish. All the code we have written in this course so
+            far is known as Synchronous code. The code inside the setTimeout func
+            is also the Synchronous code; as it will execute line by line. Don't
+            get confused it is simple concept. Generally all the code we write is
+            Synchronous code; it will execute line by line.
+            <br> When we use certain feature from JavaScript like setTimeout; at
+            that our code becomes Asynchronous.
+
+
+        </ul>
+    </p>
+
+    <script>
+        log = console.log;
+
+        /*
+        // Functions are values
+
+        const function1 = function () {
+            log("Hello");
+        };
+
+        log(function1);
+        log(typeof function1);
+        function1();
+
+        // Functions are values we can also save function inside the object
+        const object1 = {
+            num:2,
+            fun: function (){log('hello inside object');}
+        };
+
+        object1.fun();
+
+        // pass a value in the function
+        function display(param){
+            log(param);
+        }
+        display(2);
+        
+        //Passing function into another function
+        function run(param){
+            param();            
+        };
+
+        run(function(){
+            log('Hello func inside func')
+        })
+        */
+
+        // setTimeout - built in function
+
+        setTimeout(function(){
+            log('Timeout');
+        }, 3000);
+
+        log('next line');
+
+        // setInterval - It will keep running function 
+        // after cetain period of time
+        setInterval(function(){
+            log('interval');
+        }, 3000);
+
+        log('next line Interval');
+
+    </script>
+</body>
+</html>
