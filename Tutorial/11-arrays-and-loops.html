@@ -34,10 +34,75 @@
                 2. Loop through the array and update the result.
             </p>
 
+            <li>More on Arrays [After todo list project, session]</li>
+            <p>
+                • Arrays are references; like we learned about objects
+                are references.
+                <br>
+                slice() -> This will create a copy; and stores in different
+                variable. It means that array1 and array2 are two different
+                so if we changed the value in the array2 is no longer affect
+                the array1.
+                <br>
+                Desctructing -> If we want to get the values out of an array
+                there is two way to do it. One is by indexing and second is
+                by using desctructing like <br>
+                Ex: suppose we want to get first two values we can use the 
+                desctructing like const [ firstValue, secondValue ] = [1,2,3]
+                It saves 1st value in variable firstValue <br>
+                It saves 2nd value in variable secondValue <br>
+            </p>
+
+            <li> More on Loops</li>
+            <p>
+                • Break => Exits a loop early <br>
+                • Continue => Lets just skip 1 iteration of the loop
+            </p>
+
         </ul>
     </p>
     
     <script>
+        const log = console.log;
+
+        for (let i = 1; i<= 10; i++) {
+            if (i %3 === 0){
+                continue;
+            }
+
+            log(i);
+            
+            if(i === 6){
+                break;
+            }
+        }
+        
+        log('\n\n')
+
+        i= 1;
+        while (i<=10) {
+            if (i % 3 ===0){
+                i++;
+                continue;
+            }
+            log(i);
+        }
+
+        //More on loops
+        
+        /*
+        //More on arrays; Arrays are references
+        const array1 = [1,2,3];
+        const array2 = array1.slice();
+        array2.push(4);
+        log(array1);
+        log(array2);
+
+        // Desctructing -> If we 
+        const [firstValue, secondValue] = [1,2,3];
+        */
+
+        /*
         // Accumulator
         const nums = [1,1,3];
         let total = 0;
@@ -120,6 +185,7 @@
         console.log(myArray);
         [1,'hello',true, { name: 'socks'}, [2,3]]
         */
+
     </script>
 </body>
 </html>
