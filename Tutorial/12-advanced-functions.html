@@ -82,12 +82,91 @@
             <br> When we use certain feature from JavaScript like setTimeout; at
             that our code becomes Asynchronous.
 
+            <i>for each - Another way to loop through an array</i>
+            <br>[
+            <br>    'make dinner',
+            <br>    'wash dishes',
+            <br>    'watch youtube'
+            <br> ].forEach(function(value){
+            <br>        console.log(value);
+            <br> });
+            
+            <ul>
+                <li>It will take the first value and save it in the parameter 
+                    value</li>
+                <li>and run the function</li>
+                <li>Above process will continues till end of loop</li>
+                <li>forEach method is a preferred way to loop through an array
+                    it is easier to read
+                </li>
+            </ul>
+
+            <li> Advanced Functions (part two) - Arrow functions</li>
+            <p>
+                An shorter way to write a functions in JavaScript that is arrow
+                functions. Arrow functions will mostly work the same way as the
+                regular functions.
+
+                <br>
+                When we passing function into another function it is recommended
+                to use Arrow function.
+
+                <br> One major disadvantage of Arrow function is it does not supports
+                Hoisting.
+
+                <br> We can use arrow functions with objects also
+            </p>
+
+            <li>Practise</li>
+            <p>
+                Create a button element and add some functionality.
+                <br> Every HTML element has method .addEventListener();
+                <br> Lets us run some code when we interact with the element. It sort of 
+                does the same think onclick
+                <br>elementName.addEventListener(param1, param2)
+                <br>• param1: event -> what type of interaction we want to listen for in
+                our case that is 'click'. The way to find this attribute is onclick. The
+                Word after on -> click; that  is the event.
+                <br>• param2: A function that we want to run, when we click this element.
+
+                <br> When we click a button -> click it will run the function; basically
+                it will does the same thing as onclick, but there are some advantages
+                over using attribute.
+                <br> • Advantages:
+                <br> 1. It just lets us add multiple event listeners for an event
+                <br> 2. We can remove event listener using method .removeEventListener();
+                <br> 3. It gives us more control over event listeners. It is the best
+                practises to use .addEventListeners instead of onclick="";
+            </p>
+
+
 
         </ul>
     </p>
 
+    <button onclick="" class="js-button">Click</button>
+
     <script>
-        log = console.log;
+
+        const buttonElement = document.querySelector('.js-button');
+
+        const eventListener = () => {
+            console.log('click');
+        };
+
+        buttonElement.addEventListener('click', eventListener);
+
+        // removing event listener
+        buttonElement.removeEventListener('click', eventListener);
+
+        // Multiple event execution, when we click it will run above and below
+        buttonElement.addEventListener('click', () => {
+            console.log('click2');
+        });
+
+
+
+        let log = console.log;
 
         /*
         // Functions are values
@@ -125,7 +204,7 @@
         */
 
         // setTimeout - built in function
-
+        /*
         setTimeout(function(){
             log('Timeout');
         }, 3000);
@@ -139,6 +218,90 @@
         }, 3000);
 
         log('next line Interval');
+        */
+        
+        // forEach method to loop through an array
+        /*
+        [
+            'make dinner',
+            'wash dishes',
+            'watch youtube'
+        ].forEach(function (value, index){
+            log(index);
+            log(value);
+        });
+
+        log('\n\nreturn to get out of this loop\n\n');
+
+        // In the loops we' ve learned about break, continue but in 
+        // forEach it is not the case. Instead we can use return
+        [
+            'make dinner',
+            'wash dishes',
+            'watch youtube'
+        ].forEach(function (value, index){
+            if (value === 'wash dishes'){
+                return;
+            }
+            log(index);
+            log(value);
+        });
+
+        // Practise on arrow function rewrite the above function using arrow
+        log('\n\nSameAbove function using arrow');
+        [
+            'make dinner',
+            'wash dishes',
+            'watch youtube'
+        ].forEach((value, index) => {log(value);log(index);})
+
+
+        log('\n\n==== Arrow functions =====')
+        // Arrow functions
+        const arrowFunction = (param, param2) => {
+            return 5;
+        };
+
+        log(arrowFunction());
+
+        // Regular function
+        const regularFunction = function(param, param2){
+            return 5;
+        };
+
+        log(regularFunction());
+
+        log('\n ==== Differences Arrow vs Regular =====');
+        // Differences
+        // When arrow func as only one parameter (bracket) is optional
+        const oneParam = param => {
+            log(param + 1);
+        };
+        oneParam(2);
+
+        // oneLine arrow function
+        const oneLine = () => { 
+            return 2+2; 
+        }
+        
+        // when arrow function has single line like above can be written as
+        // It has single line hence no need to add return and {brackets}
+        // It is one line arrow function
+        const oneLineShortCut = () => 2 + 3;
+        log(oneLineShortCut());
+
+        // Arrow functions and objects
+
+        const object2 = {
+            method: () => {
+                log('This syntax can be used.But not easier to read.');
+            },
+            methods() {
+                log('It is recommended way bcz easier to read. Shorthand')
+            }
+        };
+        */
+
 
     </script>
 </body>
