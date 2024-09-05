@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Exercises 11i - 11n</title>
+    <style>
+        .js-button {
+            padding: 5px 10px 5px 10px;
+            margin: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body style="background-color: #313131;color:aliceblue">
+    
+    <p>
+        12a. Create a variable called 'add' and save a function inside. This
+        function will console.log(2+3); Run the function twice
+    </p>
+    
+    <br>
+    
+    <p>
+        12b. Continuing from exercise 12a, create a function runTwice(fun) that
+        takes a function (as a parameter) and runs it twice.
+        <br>• runTwice(function(){console.log('12b');}); => console.log('12b')twice
+        <br>• runTwice(add); => console.log(5)twice
+    </p>
+    
+    <br>
+
+    <p>
+        12c. Create a button below. When clicking the button, after 1 second,
+        the text inside the button changes to 'Finished!'.
+        <br>(Hint: use setTimeout() and the DOM)
+    </p>
+    <button class="js-button" onclick="
+        updateButton();
+    ">Start</button>
+
+    <br>
+
+    <p>
+        12b. Create a button below. When clicking the button, after 1 second,
+        the text inside the button changes to 'Finished!'.
+        <br>(Hint: use setTimeout() and the DOM)
+    </p>
+
+
+
+
+    <script>
+        // 12a Answer 
+        // let add = (num1,num2) => num1 + num2;
+        const add = function(){
+            console.log(2+3);
+        }
+        add();
+        add();
+        
+        // 12b Answer
+        function runTwice(fun){
+            fun();
+            fun(); 
+        }
+
+        runTwice(function(){
+            console.log('12b');
+        })
+
+        // 12c Answer
+        // function changeState(){
+        //     setTimeout(()=>{document.getElementById("start").innerText="Finished"},1000)
+        // }
+
+        // 12c Answer Above also worked but cleaner code practises
+        // Grouping the js code into a function is optional but it is bit cleaner
+        
+        function updateButton(){
+            const button = document.querySelector(".js-button");
+
+            setTimeout(function(){
+                button.innerHTML = "Finished";
+            },1000);
+        }
+
+    </script>
+</body>
+</html>
