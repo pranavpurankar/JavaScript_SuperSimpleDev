@@ -42,13 +42,23 @@
     <br>
 
     <p>
-        12b. Create a button below. When clicking the button, after 1 second,
-        the text inside the button changes to 'Finished!'.
-        <br>(Hint: use setTimeout() and the DOM)
+        12d. Continuing from exercise 12c, modify the button so that when we
+        click it, the text immediately changes to 'Loading...' and then after
+        1 second, it changes to 'Finished!'
     </p>
 
+    <br>
 
+    <p>
+        12e. Create the 'Add to cart' button below. When clicking this button,
+        display the message "Added" below the button. Then, after 2 seconds,
+        remove the message
+    </p>
 
+    <button class="js-button" onclick="
+        displayMessage();
+    ">Add to cart</button>
+    <p class="js-message"></p>
 
     <script>
         // 12a Answer 
@@ -76,13 +86,27 @@
 
         // 12c Answer Above also worked but cleaner code practises
         // Grouping the js code into a function is optional but it is bit cleaner
-        
+        // 12d Answer just added another setTimeout func no need to create another func
         function updateButton(){
             const button = document.querySelector(".js-button");
 
             setTimeout(function(){
+                button.innerHTML = "Loading";
+            },0);
+
+            setTimeout(function(){
                 button.innerHTML = "Finished";
             },1000);
+        }
+
+        // 12e Answer
+        function displayMessage(){
+            const messageElement = document.querySelector('.js-message');
+            messageElement.innerHTML = 'Added';
+
+            setTimeout(function(){
+                messageElement.innerHTML='';
+            },2000);
         }
 
     </script>
