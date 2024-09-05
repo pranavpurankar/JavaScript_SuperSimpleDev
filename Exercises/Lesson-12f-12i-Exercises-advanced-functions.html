@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+    <style>
+        .js-button{
+            margin-right: 20px;
+            padding: 10px;
+            font-size: 15px;
+            background-color: aqua;
+            border-style: none;
+        }
+    </style>
+</head>
+<body style="background-color: #313131;color:aliceblue">
+    
+    <p>
+        12f. Continuing from 12e, if we click the button, wait 1 to 1.5 sec,
+        and then click the button again, notice that the second time, the
+        message disappears very quickly (because the first setTimeout is 
+        still running and will make the message disappear very soon).
+        <br>• Modify the code so when we click the button, it "refreshes" the
+        2 second wait time (waits for 2 seconds again and removes message)
+        <br>• Hint: you can cancel the previous setTimeout using clearTimeout()
+    </p>
+    <button class="js-button" onclick="
+        displayMessage();
+    ">Add to cart</button>
+    <p class="js-message"></p>
+
+    <br>
+    
+    <p>
+        12g. Imagine we're creating a messaging app. Use setInterval() and
+        document.title to create the feature on the right (the title changes
+        every 1 sec)
+    </p>
+
+    <br>
+
+    <p>
+        12h. Continuing from 12g, instead of displaying "(2) New Messages" 
+        every time, save the number of messages in a variable: let messages
+        = 2;
+        <br>• Use the number in the variable to determine what little to 
+        display.
+        <br>• Create 2 buttons 'Add'/'Remove' that increase/decrease the
+        'message' variable by 1.
+    </p>
+    <button class="js-button" onclick="
+        messages++;
+        displayNotification();
+    ">Add</button>
+    <button class="js-button" onclick="
+        if (messages > 0) {
+        messages--;
+
+        // If there are no new messages, stop displaying
+        // the notification in the tab.
+        if (messages === 0) {
+          stopNotification();
+        }
+      }
+    " >Remove</button>
+    
+    <br>
+
+    <p>
+        12i. Continuing from 12h:
+        <br>• Don't let the 'message' go below 0.
+        <br>• If message === 0 stop changing the title and display 'App' 
+              as the title.
+        <br>• When message > 0 start changing the title again.
+    </p>
+
+    <script>
+
+        // 12f Answer
+        let timeoutId;
+
+        function displayMessage(){
+            const messageElement = document.querySelector('.js-message');
+            messageElement.innerHTML = 'Added';
+
+            // First cancel the previous timeout so that
+            // it dosen't remove the message too quickly
+            clearTimeout(timeoutId);
+
+            timeoutId = setTimeout(function(){
+                messageElement.innerHTML='';
+            },2000);
+        }
+
+        // 12g Answer
+        /*
+        setInterval(function(){
+            if(document.title === 'App'){
+                document.title = '(2) New messages';
+            }else{
+                document.title = 'App'
+            }
+        },1000)
+        */
+
+        //12h Answer
+        /*
+        let message = 2;
+        setInterval(function (){
+            if(document.title==='App'){
+                document.title = `${message} New messages`;
+            }else{
+                document.title = 'App';
+            }
+        },1000)
+        */
+
+        //12i Answer
+        let messages = 2;
+
+        // Save the intervalId in case we need to cancel it.
+        let intervalId;
+
+        // We'll use this variable to keep track of whether
+        // or not we're displaying the notification.
+        let isDisplayingNotification;
+
+        // Start displaying the notification in the tab
+        // when the page first loads.
+        displayNotification();
+
+        function displayNotification() {
+        // If we're already displaying the notification,
+        // stop this function because we don't want to
+        // create 2 intervals at the same time.
+        if (isDisplayingNotification) {
+            return;
+        }
+
+        isDisplayingNotification = true;
+
+        intervalId = setInterval(function() {
+            if (document.title === 'App') {
+            document.title = `(${messages}) New messages`;
+            } else {
+            document.title = 'App';
+            }
+        }, 1000);
+        }
+
+        function stopNotification() {
+        isDisplayingNotification = false;
+
+        clearInterval(intervalId);
+        document.title = 'App';
+        }
+    </script>
+</body>
+</html>
