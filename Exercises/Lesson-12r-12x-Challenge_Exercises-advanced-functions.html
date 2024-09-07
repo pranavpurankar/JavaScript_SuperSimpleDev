@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Function-Challenge Exercise</title>
+</head>
+<body style="background-color: #313131;color:aliceblue">
+
+    <h2>The following exercise will build on the Rock Paper Scissors Game.</h2>
+    <p>
+        12n. 
+        <br>• removeEgg(['egg','apple','egg','egg','ham']) => ['apple', 'ham']
+    </p>
+
+    <br>
+    <p>
+        12r. Make a copy of the Rock Paper Scissors game into the files 12r.html,
+        12r.css, and 12r.js.
+        <br>• Update the link and script elements to load 12r.css and 12r.js.
+        <br>• Also, make a copy of the images and make sure they load properly.
+    </p>
+    <br>
+    <p>
+        12s. Update the 'Auto Play' button to use .addEventListener('click',..)
+        instead of onclick="..."
+    </p>
+    <br>
+    <p>
+        12t. Update the 'Auto Play' button so that when the game is auto playing,
+        the text in the button is 'Stop Playing'. Otherwise, the text in the button
+        is 'Auto Play'
+    </p>
+
+    <br>
+    <p>
+        12u. Update the code so pressing 'a' on keyboard will auto play the game.
+    </p>
+    <br>
+    <p>
+        12v. Update the 'Reset Score' button to use .addEventListener('click',..)
+    </p>
+
+    <br>
+    <p>
+        12w. Update the code so pressing 'Backspace' will reset the score.
+    </p>
+
+    <br>
+    <p>
+        12x. When clicking 'Reset Score' or pressing 'Backspace', instead of
+        resetting the score immediately, display a confimation message below the
+        button:
+        <ul>
+            <li>Are you sure you want to reset the score? <button>Yes</button> <button>No</button></li>
+            <li>Clicking 'Yes' will reset the score, and hide the message.</li>
+            <li>Clicking 'No' will reset the score, and hide the message.</li>
+        </ul>
+    </p>
+
+<script>
+    // 12n Answer
+    function removeEgg (arr){
+        return arr.filter( (value) => value !== "egg");
+    }
+
+    console.log(removeEgg(['egg','apple','egg','egg','ham']));
+    
+    // 12 o Answer
+    function removeEggTwo(foods) {
+        let eggsRemoved = 0;
+
+        return foods.filter((food) => {
+          // If the food is 'egg', we should return false
+          // but only if we haven't removed 2 eggs already.
+          if (food === 'egg' && eggsRemoved < 2) {
+            eggsRemoved++;
+            return false;
+          }
+
+          return true;
+        });
+      }
+    console.log(removeEggTwo(['egg','apple','egg','egg','ham']));    
+    
+</script>
+
+</body>
+</html>
