@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Function</title>
+</head>
+<body style="background-color: #313131;color:aliceblue">
+
+    <p>
+        12n. Create a function removeEgg(foods) that takes an array of strings
+        and returns an array where the string 'egg' is removed. Create this 
+        function using .filter() instead of loop.
+        <br>• removeEgg(['egg','apple','egg','egg','ham']) => ['apple', 'ham']
+    </p>
+
+    <br>
+    <p>
+        12o. Update exercise 12n to only remove the first 2 eggs from the array
+        Again, use .filter() instead of a loop.
+        <br>• removeEgg(['egg','apple','egg','egg','ham']) => ['apple','egg','ham']
+    </p>
+    <br>
+    <p>
+        12p and 12q This exercise are just converting 12c-12i code to arrow 
+        functions.
+    </p>
+
+
+
+<script>
+    // 12n Answer
+    function removeEgg (arr){
+        return arr.filter( (value) => value !== "egg");
+    }
+
+    console.log(removeEgg(['egg','apple','egg','egg','ham']));
+    
+    // 12 o Answer
+    function removeEggTwo(foods) {
+        let eggsRemoved = 0;
+
+        return foods.filter((food) => {
+          // If the food is 'egg', we should return false
+          // but only if we haven't removed 2 eggs already.
+          if (food === 'egg' && eggsRemoved < 2) {
+            eggsRemoved++;
+            return false;
+          }
+
+          return true;
+        });
+      }
+    console.log(removeEggTwo(['egg','apple','egg','egg','ham']));    
+    
+</script>
+
+</body>
+</html>
